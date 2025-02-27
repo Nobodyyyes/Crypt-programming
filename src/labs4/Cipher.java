@@ -2,6 +2,11 @@ package labs4;
 
 import java.util.Scanner;
 
+/**
+ * Реализовать замену символов по первому правилу
+ * Шифра Плейффера для английского алфавита (размер таблицы 5*5)
+ */
+
 public class Cipher {
     private static final char[][] TABLE = new char[5][5];
 
