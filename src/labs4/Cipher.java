@@ -3,9 +3,9 @@ package labs4;
 import java.util.Scanner;
 
 public class Cipher {
-    private static final char[][] table = new char[5][5];
+    private static final char[][] TABLE = new char[5][5];
 
-    private static final String alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
+    private static final String ALPHABET = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -25,12 +25,12 @@ public class Cipher {
 
     private static void generateTable(String key) {
         StringBuilder used = new StringBuilder();
-        String keyString = (key + alphabet).toUpperCase().replaceAll("[^A-Z]", "").replace("J", "I");
+        String keyString = (key + ALPHABET).toUpperCase().replaceAll("[^A-Z]", "").replace("J", "I");
 
         int index = 0;
         for (char c : keyString.toCharArray()) {
             if (used.indexOf(String.valueOf(c)) == -1) {
-                table[index / 5][index % 5] = c;
+                TABLE[index / 5][index % 5] = c;
                 used.append(c);
                 index++;
             }
@@ -39,7 +39,7 @@ public class Cipher {
 
     private static void printTable() {
         System.out.println("Ключевая таблица:");
-        for (char[] row : table) {
+        for (char[] row : TABLE) {
             for (char c : row) {
                 System.out.print(c + " ");
             }
@@ -56,7 +56,7 @@ public class Cipher {
             int row = pos[0];
             int col = (pos[1] + 1) % 5;
 
-            result.append(table[row][col]);
+            result.append(TABLE[row][col]);
         }
         return result.toString();
     }
@@ -64,7 +64,7 @@ public class Cipher {
     private static int[] findPosition(char c) {
         for (int row = 0; row < 5; row++) {
             for (int col = 0; col < 5; col++) {
-                if (table[row][col] == c) {
+                if (TABLE[row][col] == c) {
                     return new int[]{row, col};
                 }
             }
