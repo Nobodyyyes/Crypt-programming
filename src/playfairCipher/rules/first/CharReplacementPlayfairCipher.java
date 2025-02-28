@@ -1,12 +1,13 @@
-package labs4;
+package playfairCipher.rules.first;
 
 import java.util.Scanner;
 
 /**
+ * 10 - вариант
  * Реализовать замену символов по первому правилу
  * Шифра Плейффера для английского алфавита (размер таблицы 5*5)
  */
-public class Cipher {
+public class CharReplacementPlayfairCipher {
     private static final char[][] TABLE = new char[5][5];
 
     private static final String ALPHABET = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
