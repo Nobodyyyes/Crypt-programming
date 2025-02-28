@@ -1,4 +1,4 @@
-package password;
+package password.resilience;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
