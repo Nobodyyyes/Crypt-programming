@@ -33,7 +33,7 @@ public class RouteShufflesSnakePattern {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("=========================================================================================");
-        System.out.println("Введите текст (16 символов или меньше): ");
+        System.out.println("Введите текст: ");
         String input = scanner.nextLine();
         scanner.close();
 
@@ -45,7 +45,7 @@ public class RouteShufflesSnakePattern {
         System.out.println("Таблица: ");
         printTable(TABLE);
 
-        System.out.println("Зашифрованные текст: ");
+        System.out.println("Зашифрованный текст: ");
         String encryptedText = encryptBySnakePattern(TABLE);
         System.out.println(encryptedText);
         System.out.println("=========================================================================================");
