@@ -1,4 +1,4 @@
-package hash;
+package hash.sha1;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
