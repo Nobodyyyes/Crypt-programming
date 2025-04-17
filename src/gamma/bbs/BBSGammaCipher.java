@@ -45,7 +45,16 @@ public class BBSGammaCipher {
 
     private int getLowBit() {
         state = state.modPow(BigInteger.TWO, M);
-        return state.testBit(0) ? 1 : 0;
+
+        String binary = String.format("%8s", state.toString(2)).replace(' ', '0');
+        int lowBit = state.testBit(0) ? 1 : 0;
+
+        System.out.println("Текущее число (state): " + state);
+        System.out.println("Двоичное представление: " + binary);
+        System.out.println("Младший бит: " + lowBit);
+        System.out.println("=================================================");
+
+        return lowBit;
     }
 
     private byte[] generateGamma(int length) {
